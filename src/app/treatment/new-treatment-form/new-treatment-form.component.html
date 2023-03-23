@@ -1,0 +1,43 @@
+<form [formGroup]="newTreatmentForm">
+    
+    <div>
+        <label>
+            שם
+        </label>
+        <input formControlName="date" name="date" type="date" />
+        <ng-container *ngIf="newTreatmentForm.controls.date.errors">
+            <div *ngIf="newTreatmentForm.controls.date.errors.required">
+                השדה הוא שדה חובה
+            </div>
+        </ng-container>
+    </div>
+
+    <div>
+        <label>
+            שם
+        </label>
+        <input formControlName="time" name="time" type="time" step="15" min="07:00" max="18:00"/>
+        <ng-container *ngIf="newTreatmentForm.controls.time.errors">
+            <div *ngIf="newTreatmentForm.controls.time.errors.required">
+                השדה הוא שדה חובה
+            </div>
+        </ng-container>
+    </div>
+
+    <div>
+        <select formControlName="type" >
+            <!-- <option  >בחר מתוך רשימה</option> -->
+            <option *ngFor="let t of types" [value]="t">{{t}}</option>
+          </select>
+          <ng-container *ngIf="newTreatmentForm.controls.type.errors">
+            <div *ngIf="newTreatmentForm.controls.type.errors.required">
+                השדה הוא שדה חובה
+            </div>
+        </ng-container>
+    </div>
+    
+<button (click)='saveAppointment()' >שמור</button>
+<!-- <button (click)='save()' disabled="newTreatmentForm.invalid">שמור</button> -->
+
+
+    </form>

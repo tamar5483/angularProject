@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm">
+
+<label>שם</label>
+<input (change)=setShowError() formControlName="name"/>
+<label>סיסמה</label>
+<input  type="password" (change)=setShowError() formControlName="password"/>
+
+
+    <div *ngIf="showError">
+        .הפרטים שהכנסת אינם נכונים. בדוק שוב
+    </div>
+
+
+<button (click)="checkUser2()">כניסה</button>
+
+</form>
