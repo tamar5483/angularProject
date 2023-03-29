@@ -20,7 +20,7 @@ export class LoginformComponent implements OnInit{
 
   showError: boolean = false
 
-  user: employeeModel = { name: "", password: "", role: "doctor", id: 1, phone: "", email: "" }
+  user: employeeModel = { name: "", password: "", role: "doctor", id: "1", phone: "", email: "" }
 
   setShowError() {
     this.showError = false

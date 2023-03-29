@@ -1,11 +1,11 @@
-<h1>u</h1>
+
 
 <table >
     <thead>
-        <th>מספר</th>
+        <th>מספר זהות</th>
         <th>שם</th>
         <th>טלפון</th>
-    
+    <th>מספר רופא</th>
     </thead>
     <tbody *ngFor="let patient of patients">
     <patient [currentPatient]="patient"(click)="goToAppointments(patient)"></patient>
@@ -13,7 +13,7 @@
 </table>
 
 
-<new-patient-form *ngIf="showInput" (onPatientSave)="addPatient($event)" ></new-patient-form>
+<new-patient-form *ngIf="showInput" (onPatientSave)="addPatient($event)" [doctorId]="doctorId"></new-patient-form>
 
 
 

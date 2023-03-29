@@ -20,9 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    ManagerModule,
-    DoctorModule,
-    SecretaryModule,
     CommonModule,
     BrowserAnimationsModule
    

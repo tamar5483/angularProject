@@ -9,13 +9,14 @@ import { Observable } from 'rxjs';
 export class PatientsService {
 
   patients: patientModel[] = [
-    { id: "1", name: "sdf", phone: "123123213" },
-    { id: "1", name: "sdf", phone: "123123213" },
-    { id: "1", name: "sdf", phone: "123123213" },
-    { id: "1", name: "sdf", phone: "123123213" }
+    { id: "1", name: "sdf", phone: "123123213",doctorId:"1" },
+    { id: "2", name: "sdf", phone: "123123213",doctorId:"1" },
+    { id: "3", name: "sdf", phone: "123123213",doctorId:"2"},
+    { id: "4", name: "sdf", phone: "123123213",doctorId:" 2"}
   ]
 
   constructor(private http: HttpClient) { }
+
 
   addPatient(patient: patientModel) {
     this.http.post('', patient)
@@ -27,8 +28,10 @@ export class PatientsService {
   }
 
 
-  getPatients2(id: string): patientModel[]{
-    return this.patients.filter(p=>p.id===id)
+  getPatients2(id: string|null): patientModel[]{
+    if( id ==="0")
+    return this.patients
+    return this.patients.filter(p=>p.doctorId===id)
   }
 
 

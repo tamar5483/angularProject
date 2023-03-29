@@ -1,7 +1,7 @@
 import { Component, OnInit,EventEmitter, Output, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { treatmentModel } from '../treatment.model';
-import { TreatmentService } from '../treatment.service';
+import { appointmentModel } from '../treatment.model';
+import { AppointmentService } from '../appointment.service';
 @Component({
   selector: 'new-treatment-form',
   templateUrl: './new-treatment-form.component.html',
@@ -9,17 +9,18 @@ import { TreatmentService } from '../treatment.service';
 })
 export class NewTreatmentFormComponent implements OnInit  {
 
-  constructor(private treatment_service: TreatmentService) { }
+  constructor(private treatment_service: AppointmentService) { }
 
-  types:string[]=["shoresh","stima"]
+  types:string[]=[]
 
-  statuses:string[]=["adfsd","moddle","finished"]
+  statuses:string[]=[]
 
   newTreatmentForm: FormGroup = new FormGroup(
     {
       "type": new FormControl("", [Validators.required]),//Validators.required
       "date": new FormControl("", [Validators.required]),//Validators.required
-      "time": new FormControl("", [Validators.required]),//Validators.required
+      "time": new FormControl("", [Validators.required,Validators.min(7)]),//Validators.required
+      "status":new FormControl("", [Validators.required])
     }
   )
 ngOnInit(): void {
@@ -31,10 +32,10 @@ ngOnInit(): void {
 patientId:string|null=""
 
   @Output()
-  onAppointmentSave : EventEmitter<treatmentModel> = new EventEmitter<treatmentModel>();
+  onAppointmentSave : EventEmitter<appointmentModel> = new EventEmitter<appointmentModel>();
 
   saveAppointment(){
-    this.onAppointmentSave.emit( {id:1,patientId:this.patientId,
+    this.onAppointmentSave.emit( {id:87687676,patientId:this.patientId,
       type:this.newTreatmentForm.controls.type.value,
       status:"start",time:this.newTreatmentForm.controls.time.value,date:this.newTreatmentForm.controls.date.value});
   }

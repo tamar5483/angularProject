@@ -16,7 +16,7 @@ export class PatientComponent implements OnInit {
 newPatient:boolean=false
 
 @Input()
-currentPatient:patientModel={id:"1",name:"asda",phone:"23123123"};
+currentPatient:patientModel={id:"1",name:"asda",phone:"23123123",doctorId:"1"};
 
 
 }

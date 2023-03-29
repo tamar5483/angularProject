@@ -1,23 +1,28 @@
+<div *ngIf="!ableSet" (click)="setAbleSet(true)">{{appointment.patientId}} {{appointment.type}} {{appointment.time }}
+  {{appointment.date |dateFormat}} </div>
 
-<div *ngIf="!ableSet" (click)="setAbleSet()">
-{{appointment.id}} {{appointment.patientId}} {{appointment.type}}</div>
+<div *ngIf="ableSet">
 
-<div *ngIf="ableSet" (blur)="save()" >
-<label>יום</label>
-<input type="date" [(ngModel)]="appointment.date" value="appointment.date"/>
+  <label>יום</label>
+  <input type="date" [(ngModel)]="appointment.date"/>
 
-<label>שעה</label>
-<input type="time" [(ngModel)]="appointment.time" value="appointment.time"/>
 
-<label>סוג</label>
-<select  [(ngModel)]="appointment.type" >
-    <option *ngFor="let t of types" [value]="t" >{{t}}</option>
+  <label>שעה</label>
+  <input type="time" [(ngModel)]="appointment.time" />
+ 
+
+  <label>סוג</label>
+  <select [(ngModel)]="appointment.type">
+    <option *ngFor="let t of types" >{{t}}</option>
   </select>
 
-<label>סטטוס</label>
-<select  [(ngModel)]="appointment.status">
+  <label>סטטוס</label>
+  <select [(ngModel)]="appointment.status">
     <!-- <option  >בחר מתוך רשימה</option>  -->
-     <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
-  </select> 
+    <option *ngFor="let s of statuses" value="s">{{s}}</option>
+    <!-- [value]="s" -->
+  </select>
+
+  <button (click)="save()">אישור</button>
 
 </div>

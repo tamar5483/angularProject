@@ -25,8 +25,9 @@ export class HomePageComponent implements OnInit {
 //   this.router.navigate(['doctor/:id/treatment/1'])
 
 //  }
- goToDictinary(){
- // this.router.navigate(['doctor/:id/schedule'])
+ goToSchdule(){
+  var r=`${this.router.url}/schedule`
+  this.router.navigate([r])
 
  }
 }

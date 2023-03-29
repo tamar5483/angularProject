@@ -1,10 +1,12 @@
 import { Time } from "@angular/common";
 
-export interface treatmentModel{
+export interface appointmentModel{
     id:number,
     patientId:string|null,
     type:string,
     status:string,
-    time:Time,
-    date:Date
+   // time:Time,
+   time:string
+   // date:Date
+    date:string
 }

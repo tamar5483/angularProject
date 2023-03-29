@@ -27,7 +27,7 @@ export class NewEmployeeFormComponent {
 
   submit() {
     var emp: employeeModel = {
-      id: 1,
+      id: "1",
       name: this.newEmployeeForm.controls.name.value,
       phone: this.newEmployeeForm.controls.phone.value,
       email: this.newEmployeeForm.controls.email.value,
@@ -35,7 +35,8 @@ export class NewEmployeeFormComponent {
       password:"1"
     };
     this.emp_servvice.addEmployee(emp)
-    this.router.navigate(['manager'])
+    this.router.navigate([`manager/${localStorage.getItem('userId')}`])
+    console.log(this.newEmployeeForm.errors)
   }
 
 

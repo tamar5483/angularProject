@@ -1,0 +1,22 @@
+<table >
+    <thead>
+        <th>מספר</th>
+        <th>שם</th>
+        <th>טלפון</th>
+        <th>מייל</th>
+        <th>תפקיד</th>
+        <th></th>
+    </thead>
+    <tbody *ngFor="let employee of employees; index as i">
+        <tr> 
+             <employee-details [employee]="employee" (click)="goToEmployee(employee)"></employee-details>
+        <td><button (click)="deleteEmployee(employee.id)">מחיקה</button></td>
+    </tr>
+<!-- <tr> <td>{{employee.id}}</td> <td>{{employee.name}}</td> <td>{{employee.phone}}</td><td>{{employee.email}}</td> <td><button >מחיקה</button></td></tr> -->
+
+    </tbody>
+</table>
+<button (click)=addEmp()>הוסף עובד</button>
+
+
+

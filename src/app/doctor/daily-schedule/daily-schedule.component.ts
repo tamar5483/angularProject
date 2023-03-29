@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appointmentModel } from 'src/app/treatment/treatment.model';
 
 @Component({
   selector: 'app-daily-schedule',
@@ -10,6 +11,8 @@ export class DailyScheduleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  appointments:appointmentModel[]=[]
 }

@@ -10,17 +10,17 @@ export class TreatmentService {
 
   appointments:treatmentModel[]=[
     {id:1,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"4",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"3",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"5",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
-    {id:1,patientId:"5",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:2,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:3,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:4,patientId:"4",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:5,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:6,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:7,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:8,patientId:"2",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:9,patientId:"1",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:10,patientId:"3",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:11,patientId:"5",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
+    {id:12,patientId:"5",type:"xcf",status:"m" ,time:{hours:5,minutes:56},date:new Date()},
   ]
 
   types:string[]=["שורש","סתימה"]
@@ -30,6 +30,7 @@ export class TreatmentService {
   constructor(private http: HttpClient) { }
 
   addTreatment(t: treatmentModel) {
+    t.id=(this.appointments.length+1)
     //this.http.post('', t);
     this.appointments.push(t)
   }

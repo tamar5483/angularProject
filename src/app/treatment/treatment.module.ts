@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TreatmentRoutingModule } from './treatment-routing.module';
 import { TreatmentsListComponent } from './treatments-list/treatments-list.component';
 import { TreatmentComponent } from './treatment/treatment.component';
+import { DatePipe } from './israel-date.pipe';
 
 
 
@@ -14,7 +15,8 @@ import { TreatmentComponent } from './treatment/treatment.component';
   declarations: [ NewTreatmentFormComponent,
     TreatmentDetailsComponent,
     TreatmentsListComponent,
-    TreatmentComponent],
+    TreatmentComponent,
+    DatePipe],
   imports: [
     CommonModule,
   ReactiveFormsModule,

@@ -2,7 +2,7 @@
     
     <div>
         <label>
-            שם
+   תאריך
         </label>
         <input formControlName="date" name="date" type="date" />
         <ng-container *ngIf="newTreatmentForm.controls.date.errors">
@@ -14,9 +14,10 @@
 
     <div>
         <label>
-            שם
+            שעה
         </label>
-        <input formControlName="time" name="time" type="time" step="15" min="07:00" max="18:00"/>
+        <input formControlName="time" name="time" type="time" />
+        <!-- step="15" min="07:00" max="18:00" -->
         <ng-container *ngIf="newTreatmentForm.controls.time.errors">
             <div *ngIf="newTreatmentForm.controls.time.errors.required">
                 השדה הוא שדה חובה
@@ -35,8 +36,17 @@
             </div>
         </ng-container>
     </div>
-    
-<button (click)='saveAppointment()' >שמור</button>
+    <div>
+        <label>סטטוס</label>
+<select formControlName="status"  >
+     <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+  </select>   <ng-container *ngIf="newTreatmentForm.controls.status.errors">
+    <div *ngIf="newTreatmentForm.controls.status.errors.required">
+        השדה הוא שדה חובה
+    </div>
+</ng-container>
+    </div>
+<button (click)='saveAppointment()' [disabled]="newTreatmentForm.errors!==null" >שמור</button>
 <!-- <button (click)='save()' disabled="newTreatmentForm.invalid">שמור</button> -->
 
 

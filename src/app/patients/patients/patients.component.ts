@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { patientModel } from '../patient.model';
 import { PatientsService } from '../patients.service';
 
@@ -10,13 +10,23 @@ import { PatientsService } from '../patients.service';
 })
 export class PatientsComponent implements OnInit {
 
-  constructor(private patientService:PatientsService,private router:Router) { }
+  constructor(private patientService:PatientsService,private router:Router,private route: ActivatedRoute) { }
   
   ngOnInit(): void {
+
+    this.route.paramMap.subscribe(params => {
+     let id = params.get('doctorId');
+     // this.patientService.getPatients2(this.doctorId).subscribe
+     this.doctorId=id?id:"0";
+      this.patients = this.patientService.getPatients2(this.doctorId)
+
+    })
     this.patientService.getPatients("2").subscribe(p=>this.patients=p)
   }
 
   patients: patientModel[] =[]
+
+  doctorId: string = ""
 
 
   showInput: boolean = false
@@ -35,7 +45,7 @@ export class PatientsComponent implements OnInit {
   }
 
   goToAppointments(patient:patientModel){
-    this.router.navigate([`patients/${patient.id}/appointment`])
+    this.router.navigate([`${this.router.url}/${patient.id}/appointment`])
   }
 
 

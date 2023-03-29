@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { treatmentModel } from '../treatment.model';
-import { TreatmentService } from '../treatment.service';
+import { appointmentModel } from '../treatment.model';
+import { AppointmentService } from '../appointment.service';
 
 @Component({
   selector: 'treatments-list',
@@ -10,20 +10,19 @@ import { TreatmentService } from '../treatment.service';
 })
 export class TreatmentsListComponent implements OnInit {
 
-  constructor(private appointmentService: TreatmentService, private route: ActivatedRoute) { }
+  constructor(private appointmentService: AppointmentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-
       this.patientId = params.get('patientId');
-      this.appointmentService.getAppointments(this.patientId).subscribe
-      this.appointments = this.appointmentService.getAppointments2(this.patientId)
+     // this.appointmentService.getAppointments(this.patientId).subscribe
+      this.appointments = this.appointmentService.getAppointmentsById2(this.patientId)
 
     })
 
   }
 
-  appointments: treatmentModel[] =[]
+  appointments: appointmentModel[] =[]
 
   patientId: string | null = ""
 
@@ -33,13 +32,13 @@ export class TreatmentsListComponent implements OnInit {
     this.showForm = true;
   }
 
-  addAppointment(appointment: treatmentModel) {
-    this.appointmentService.addTreatment(appointment)
+  addAppointment(appointment: appointmentModel) {
+    this.appointmentService.addAppointment(appointment)
     this.showForm = false
-    this.appointments = this.appointmentService.getAppointments2(this.patientId)///////////////////////////////////
+    this.appointments = this.appointmentService.getAppointmentsById2(this.patientId)///////////////////////////////////
   }
 
-  updateAppointment(appointment: treatmentModel){
+  updateAppointment(appointment: appointmentModel){
 this.appointmentService.updateAppointment(appointment)
   }
 }

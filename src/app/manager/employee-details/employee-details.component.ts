@@ -15,7 +15,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   @Input()
-  employee: employeeModel = { name: "", id: 0, phone: "", email: "", role: "fdf",password: ""}
+  employee: employeeModel = { name: "", id: "0", phone: "", email: "", role: "fdf",password: ""}
 
  
 
