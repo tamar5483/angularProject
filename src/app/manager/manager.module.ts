@@ -6,15 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewEmployeeFormComponent } from './new-employee-form/new-employee-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ManagerRouterModule } from './manager-router.module';
+import { TranslatePipe } from './translate.pipe';
+import { GoToEmployeeDirective } from './go-to-employee.directive';
 
 
 
 @NgModule({
   declarations:
-   [
-     EmployeeDetailsComponent
-     ,EmployeesListComponent,
-     NewEmployeeFormComponent
+    [
+      EmployeeDetailsComponent
+      , EmployeesListComponent,
+      NewEmployeeFormComponent,
+       TranslatePipe, 
+       GoToEmployeeDirective,
+      //  MatSlideToggleModule,
     ],
   imports: [
     CommonModule,
@@ -23,8 +28,8 @@ import { ManagerRouterModule } from './manager-router.module';
     ReactiveFormsModule,
     ManagerRouterModule
   ],
-  exports:[
-   EmployeesListComponent
+  exports: [
+    EmployeesListComponent
   ]
 })
 export class ManagerModule { }

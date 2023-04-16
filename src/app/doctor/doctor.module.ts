@@ -6,6 +6,7 @@ import { DoctorRoutingModule } from './doctor-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientsModule } from '../patients/patients.module';
+import { TreatmentModule } from '../treatment/treatment.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PatientsModule } from '../patients/patients.module';
     DoctorRoutingModule,
     ReactiveFormsModule, 
     HttpClientModule,
-    PatientsModule
+    PatientsModule,
+    TreatmentModule
   ]
   , exports: [HomePageComponent]
 })

@@ -14,7 +14,6 @@ export class TreatmentComponent implements OnInit {
   ngOnInit(): void {
     this.types=this.treatment_service.getTypes()
     this.statuses=this.treatment_service.getStatuses()
-    console.log('ap ',this.appointment)
   }
 @Input()//:{hours:0,minutes:0}
 appointment:appointmentModel={id:0,patientId:"gg",type:"hh",status:"",time:"00:00",date:"01/01/2020"}

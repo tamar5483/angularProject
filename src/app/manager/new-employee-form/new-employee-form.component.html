@@ -52,6 +52,6 @@
             <option *ngFor="let role of roles" [value]="role">{{role}}</option>
           </select>
     </div>
+    <button (click)="submit()" [disabled]="newEmployeeForm.invalid" >אישור</button>
 
-    <button (click)="submit()" [disabled]="newEmployeeForm.errors!==null" >אישור</button>
 </form>

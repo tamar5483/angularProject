@@ -4,5 +4,5 @@
     </li>
 </ul>
 
-<button *ngIf="!showForm" (click)="setShowForm()">הוסף טיפול</button>
+<button *ngIf="showButton" (click)="setShowForm()">הוסף טיפול</button>
 <new-treatment-form *ngIf="showForm" (onAppointmentSave)="addAppointment($event)" [patientId]="patientId"></new-treatment-form>

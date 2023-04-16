@@ -1,9 +1,11 @@
+<div class="container">
 <form [formGroup]="loginForm">
-
-<label>שם</label>
-<input (change)=setShowError() formControlName="name"/>
-<label>סיסמה</label>
-<input  type="password" (change)=setShowError() formControlName="password"/>
+<div>
+<!-- <label>שם</label> -->
+<input (change)=setShowError() formControlName="name" placeholder="שם"/></div>
+<div>
+<!-- <label>סיסמה</label> -->
+<input  type="password" (change)=setShowError() formControlName="password"placeholder="סיסמה"/></div>
 
 
     <div *ngIf="showError" style="color: red;">
@@ -13,4 +15,11 @@
 
 <button (click)="checkUser2()">כניסה</button>
 
-</form>
+</form></div>
+<!-- <div class="drops">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+  </div> -->

@@ -8,12 +8,14 @@ import { DoctorModule } from './doctor/doctor.module';
 import { SecretaryModule } from './secretary/secretary.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GoToEmployeeDirective } from './manager/go-to-employee.directive';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [

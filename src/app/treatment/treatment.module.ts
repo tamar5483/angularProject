@@ -8,6 +8,7 @@ import { TreatmentRoutingModule } from './treatment-routing.module';
 import { TreatmentsListComponent } from './treatments-list/treatments-list.component';
 import { TreatmentComponent } from './treatment/treatment.component';
 import { DatePipe } from './israel-date.pipe';
+import { ShowFormDirective } from './show-form.directive';
 
 
 
@@ -16,13 +17,14 @@ import { DatePipe } from './israel-date.pipe';
     TreatmentDetailsComponent,
     TreatmentsListComponent,
     TreatmentComponent,
-    DatePipe],
+    DatePipe,
+    ShowFormDirective],
   imports: [
     CommonModule,
   ReactiveFormsModule,
   HttpClientModule,
   TreatmentRoutingModule,
   FormsModule
-  ]
+  ],exports:[TreatmentsListComponent]
 })
 export class TreatmentModule { }

@@ -1,4 +1,4 @@
-<table >
+<table  class="table table-hover" >
     <thead>
         <th>מספר</th>
         <th>שם</th>
@@ -9,9 +9,10 @@
     </thead>
     <tbody *ngFor="let employee of employees; index as i">
         <tr> 
-             <employee-details [employee]="employee" (click)="goToEmployee(employee)"></employee-details>
-        <td><button (click)="deleteEmployee(employee.id)">מחיקה</button></td>
-    </tr>
+             <employee-details [employee]="employee" [GoToEmployee]=employee></employee-details>
+        <!-- <td><button (click)="deleteEmployee(employee.id)"type="remove">מחיקה</button></td> -->
+     <!-- <td>   <button (click)="deleteEmployee(employee.id)" class="btn btn-floating" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></td> -->
+    <!-- </tr><button class="btn"><i class="fa fa-trash"></i></button> -->
 <!-- <tr> <td>{{employee.id}}</td> <td>{{employee.name}}</td> <td>{{employee.phone}}</td><td>{{employee.email}}</td> <td><button >מחיקה</button></td></tr> -->
 
     </tbody>

@@ -38,14 +38,14 @@ export class PatientsComponent implements OnInit {
   }
   
   addPatient(p: patientModel) {
-    this.patients.push(p);
+   // this.patients.push(p);
     this.showInput = false;
     this.patientService.addPatient(p)
 
   }
 
   goToAppointments(patient:patientModel){
-    this.router.navigate([`${this.router.url}/${patient.id}/appointment`])
+    this.router.navigate([`${this.router.url}/${patient.id}/appointments`])
   }
 
 

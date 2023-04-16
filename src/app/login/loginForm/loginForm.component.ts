@@ -52,6 +52,7 @@ export class LoginformComponent implements OnInit{
       if (u !== null) {
         this.user = u
         this.router.navigate([`${this.user.role}/${this.user.id}`])
+        this.router.navigate([`${this.user.role}/${this.user.id}`])
         localStorage.setItem('userName',this.user.name)
         localStorage.setItem('userRole',this.user.role)
         localStorage.setItem('userId',this.user.id.toString())

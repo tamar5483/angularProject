@@ -20,9 +20,12 @@ export class NewEmployeeFormComponent {
       "name": new FormControl("", [Validators.required]),
       "phone": new FormControl("", [Validators.required, Validators.minLength(9), /*Validators.pattern("/[^0-9]/")*/]),
       "email": new FormControl("", [Validators.required, Validators.email]),
-      "role": new FormControl("", [])
+      "role": new FormControl("", [Validators.required])
     }
   )
+
+
+
 
 
   submit() {

@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   
    {
-    path:':patientId/appointment',
+    path:':patientId/appointments',
     loadChildren: ()=> import('../treatment/treatment.module').then(t => t.TreatmentModule)
    }
 

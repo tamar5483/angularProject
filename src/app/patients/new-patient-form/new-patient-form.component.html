@@ -16,7 +16,7 @@
         <label>
             מספר זהות
         </label>
-        <input formControlName="identity" name="name" />
+        <input formControlName="identity" name="identity" />
         <ng-container *ngIf="newPatientForm.controls.identity.errors">
             <!-- <div *ngIf="newPatientForm.controls.identity.errors.required">
                 השדה הוא שדה חובה
@@ -56,5 +56,5 @@
 </ng-container>
     </div>
 
-   <button (click)="savePatient()">שמור</button>
+   <button (click)="savePatient()" [disabled]="newPatientForm.invalid">שמור</button>
 </form>

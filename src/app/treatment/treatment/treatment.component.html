@@ -18,11 +18,9 @@
 
   <label>סטטוס</label>
   <select [(ngModel)]="appointment.status">
-    <!-- <option  >בחר מתוך רשימה</option>  -->
     <option *ngFor="let s of statuses" value="s">{{s}}</option>
-    <!-- [value]="s" -->
   </select>
-
-  <button (click)="save()">אישור</button>
+<!-- [disabled]="newPatientForm.invalid" -->
+  <button (click)="save()" >אישור</button>
 
 </div>

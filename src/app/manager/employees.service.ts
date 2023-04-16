@@ -40,7 +40,8 @@ export class EmployeesService {
   }
 
   addEmployee(employee: employeeModel) {
-    employee.id=(this.employees.length+1).toString()
+
+    employee.id=((Number)(this.employees.sort((a,b)=>(Number)(a.id)-(Number)(b.id))[this.employees.length-1].id)+1).toString()
    // this.http.post("", employee)
    this.employees.push(employee)
   }

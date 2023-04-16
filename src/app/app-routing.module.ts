@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DoctorGuard } from './doctor/doctor.guard';
+import { LoginGuard } from './login/login.guard';
 import { LoginformComponent } from './login/loginForm/loginForm.component';
 import { ManagerGuard } from './manager/manager.guard';
 import { SercrateryGuard } from './secretary/sercratery.guard';
@@ -19,15 +20,20 @@ const routes: Routes = [
     path: 'secretary/:id',
     canActivate : [SercrateryGuard], 
      loadChildren: ()=> import('./secretary/secretary.module').then(s => s.SecretaryModule)
+  },{
+    path:'login',
+    component:LoginformComponent,
+    canActivate : [LoginGuard], 
+
   },
    {
     path: '',
     redirectTo:'login',
     pathMatch:'full'
-  },
-  {
-    path:'login',
-    component:LoginformComponent
+  }
+  ,{
+    path:"**",
+redirectTo:'login'    
   }
 ];
 
