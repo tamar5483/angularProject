@@ -1,0 +1,24 @@
+
+
+<table  class="table table-hover">
+    <thead>
+        <th>מספר זהות</th>
+        <th>שם</th>
+        <th>טלפון</th>
+    <th>מספר רופא</th>
+    </thead>
+    <tbody *ngFor="let patient of patients">
+    <tr (click)="goToAppointments(patient)">
+        <td>{{patient.id}}</td>
+        <td> {{patient.name}}</td>
+        <td> {{patient.phone}}</td>
+        <td>{{patient.doctorId}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<new-patient-form *ngIf="showInput" (onPatientSave)="addPatient($event)" [doctorId]="doctorId"></new-patient-form>
+
+<button (click)="setShowInput()" *ngIf="!showInput">הוסף מטופל חדש</button>
+
+
