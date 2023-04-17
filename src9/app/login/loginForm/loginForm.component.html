@@ -1,0 +1,21 @@
+<div class="text-center ">
+<div  className="card bg-light ">
+<form [formGroup]="loginForm" class="card-body cardbody-color p-lg-5">
+    <!-- <div class="text-center"> -->
+
+<div  class="mb-3">
+<!-- <label>שם</label> -->
+<input (change)=setShowError() formControlName="name" placeholder="שם" class="form-control" /></div>
+<div  class="mb-3">
+<!-- <label>סיסמה</label> -->
+<input  type="password" (change)=setShowError() formControlName="password"placeholder="סיסמה" class="form-control"/></div>
+
+
+<div *ngIf="showError" style="color: red;">
+    .הפרטים שהכנסת אינם נכונים. בדוק שוב
+</div>
+<div class="mb-3">
+<button (click)="checkUser2()" class="form-control">כניסה</button>
+</div>
+</form>		  
+</div></div>
