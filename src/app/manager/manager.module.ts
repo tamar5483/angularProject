@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewEmployeeFormComponent } from './new-employee-form/new-employee-form.component';
@@ -14,8 +13,7 @@ import { GoToEmployeeDirective } from './go-to-employee.directive';
 @NgModule({
   declarations:
     [
-      EmployeeDetailsComponent
-      , EmployeesListComponent,
+      EmployeesListComponent,
       NewEmployeeFormComponent,
        TranslatePipe, 
        GoToEmployeeDirective,

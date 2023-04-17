@@ -1,33 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login/login.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent  {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private login_service:LoginService) { }
 
-  ngOnInit(): void {
-  }
 
   goToPatientslist(){
   this.router.navigate([`doctor/1/patients`])
-
  }
-//  goToAddPatient(){
-//   this.router.navigate(['doctor/:id/new-treatment-form'])
 
-//  }
-//  goToUpdatrePatient(){
-//   this.router.navigate(['doctor/:id/treatment/1'])
-
-//  }
  goToSchdule(){
-  var r=`${this.router.url}/schedule`
-  this.router.navigate([r])
-
+  this.router.navigate([`${this.router.url}/schedule`])
  }
 }

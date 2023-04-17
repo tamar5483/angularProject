@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AppointmentService } from 'src/app/treatment/appointment.service';
 import { appointmentModel } from 'src/app/treatment/treatment.model';
 
@@ -9,11 +10,14 @@ import { appointmentModel } from 'src/app/treatment/treatment.model';
 })
 export class DailyScheduleComponent implements OnInit {
 
-  constructor(private appointments_servise:AppointmentService) { }
+  constructor(private appointments_servise:AppointmentService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    var d=new Date()
-    this.appointments=this.appointments_servise.getAppointmentsByDate2(`${d.getFullYear()}-${d.getMonth().toString().padStart(2,'0')}-${d.getDate()}`)
+    this.route.paramMap.subscribe(params => {
+      let id = params.get('doctorId');
+      var d=new Date()
+      this.appointments=this.appointments_servise.getAppointmentsByDateAndDoctor2("",`${d.getFullYear()}-${d.getMonth().toString().padStart(2,'0')}-${d.getDate()}`,)
+     })
   }
 
   appointments:appointmentModel[]=[]

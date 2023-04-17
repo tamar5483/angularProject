@@ -21,7 +21,7 @@ export class PatientsComponent implements OnInit {
       this.patients = this.patientService.getPatients2(this.doctorId)
 
     })
-    this.patientService.getPatients("2").subscribe(p=>this.patients=p)
+    // this.patientService.getPatients("2").subscribe(p=>this.patients=p)
   }
 
   patients: patientModel[] =[]

@@ -9,16 +9,16 @@ import { Time } from '@angular/common';
 export class AppointmentService {
 
   appointments:appointmentModel[]=[
-    {id:1,patientId:"237453826",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-03"},
-    {id:2,patientId:"237453826",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-16"},
-    {id:3,patientId:"214272727",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-03"},
-    {id:4,patientId:"214279727",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-16"},
-    {id:5,patientId:"237453826",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-03"},
-    {id:6,patientId:"214279727",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-03"},
-    {id:7,patientId:"214272727",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-03"},
-    {id:8,patientId:"214222222",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-16"},
-    {id:9,patientId:"214222222",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-16"},
-    {id:10,patientId:"214222222",type:"xcf",status:"שורש" ,time:"00:11",date:"2023-03-16"},
+    {id:1,patientId:"237453826",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:2,patientId:"237453826",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:3,patientId:"214272727",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:4,patientId:"214279727",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:5,patientId:"237453826",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:6,patientId:"214279727",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:7,patientId:"214272727",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:8,patientId:"214222222",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:9,patientId:"214222222",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:10,patientId:"214222222",type:"שורש",status:"לא שולם" ,time:"00:11",date:"2023-03-17"},
     
   ]
   types:string[]=["שורש","סתימה"]
@@ -49,8 +49,8 @@ getAppointmentsById2(id:string|null):appointmentModel[]{
   return this.appointments.filter((a)=>a.patientId===id);
   }
 
-  getAppointmentsByDate2(date:string|null):appointmentModel[]{
-    return this.appointments.filter((a)=>a.date===date);
+  getAppointmentsByDateAndDoctor2(id:string|null,date:string|null):appointmentModel[]{
+    return this.appointments.filter((a)=>a.date===date)
     }
 
   getStatuses(){
