@@ -1,8 +1,0 @@
-<ul *ngFor="let appointment of appointments">
-    <li>
-        <treatment [appointment]="appointment" (onAppointmentUpdate)="updateAppointment($event)"></treatment>
-    </li>
-</ul>
-
-<button *ngIf="!showForm" (click)="setShowForm()">הוסף טיפול</button>
-<new-treatment-form *ngIf="showForm" (onAppointmentSave)="addAppointment($event)" [patientId]="patientId"></new-treatment-form>
