@@ -1,0 +1,70 @@
+<form [formGroup]="newPatientForm">
+    
+    <div class="form-group row">
+        <label  class="col-sm-1 col-form-label">
+            שם
+        </label>
+        <div class="col-sm-3">
+        <input formControlName="name" name="name"class="form-control" /></div>
+        <ng-container *ngIf="newPatientForm.dirty&&newPatientForm.controls.name.errors">
+            <div *ngIf="newPatientForm.controls.name.errors.required" class="error-Massage">
+                השדה הוא שדה חובה
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="form-group row">
+        <label  class="col-sm-1 col-form-label">
+            מספר זהות
+        </label>
+        <div class="col-sm-3">
+        <input formControlName="identity" name="identity" class="form-control"/></div>
+        <!-- <ng-container *ngIf="(
+            newPatientForm.get('identity').dirty ||//////////////////לתקןןןןןןןןןןןןןןןןןןןןןןןןןןןןןןן
+            newPatientForm.get('identity').touched
+           ) && (newPatientForm.get('identity')null?newPatientForm.get('identity').invalid")> -->
+          <!-- >מספר לא תקין -->
+        <!-- </ng-container> -->
+        <ng-container *ngIf="newPatientForm.dirty&&newPatientForm.controls.identity.errors">
+            <div *ngIf="newPatientForm.controls.identity.errors.required" class="error-Massage">
+                השדה הוא שדה חובה
+            </div>
+            <div *ngIf="newPatientForm.controls.identity.dirty&&newPatientForm.controls.identity.errors" class="error-Massage">
+               מספר לא תקין
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="form-group row">
+        <label  class="col-sm-1 col-form-label">
+            טלפון
+        </label>
+        <div class="col-sm-3">
+        <input formControlName="phone" name="phone"class="form-control" />
+    </div>
+        <ng-container *ngIf="newPatientForm.dirty&&newPatientForm.controls.phone.errors">
+            <div *ngIf="newPatientForm.controls.phone.errors.required" class="error-Massage">
+                השדה הוא שדה חובה
+            </div>
+            <div *ngIf="newPatientForm.controls.phone.dirty&&newPatientForm.controls.phone.errors" class="error-Massage">
+                מספר לא תקין
+             </div>
+        </ng-container>
+    </div>
+
+    <div *ngIf="doctors.length" class="form-group row">
+        <label  class="col-sm-1 col-form-label">רופא</label>
+    <div class="col-sm-3">
+<select formControlName="doctor" class="form-control" >
+     <option *ngFor="let d of doctors">{{d.name}}</option>
+  </select>  
+  </div>
+  <ng-container *ngIf="newPatientForm.dirty&&newPatientForm.controls.doctor.errors">
+    <div *ngIf="newPatientForm.controls.doctor.errors.required" class="error-Massage">
+        השדה הוא שדה חובה
+    </div>
+</ng-container>
+    </div>
+
+   <button (click)="savePatient()" [disabled]="newPatientForm.invalid" class="btn btn-dark">שמור</button>
+</form>

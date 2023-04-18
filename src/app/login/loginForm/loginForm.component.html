@@ -1,0 +1,32 @@
+<!-- <div class="text-center "> -->
+<!-- <div  className="card bg-light "> -->
+<form [formGroup]="loginForm" class="form-group row position-absolute top-50 start-50 translate-middle">
+    <div class="xx">
+    <!-- <div class="text-center"> -->
+
+    <div class="form-group row">
+        <!-- <label class="col-sm-1 col-form-label">שם</label> -->
+        <div class="col-sm-7" id="div1">
+            <input (change)=setShowError() formControlName="name" placeholder="שם" class="form-control form-item" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <!-- <label class="col-sm-1 col-form-label">סיסמה</label> -->
+        <div class="col-sm-7" id="div2">
+            <input type="password" (change)=setShowError() formControlName="password" placeholder="סיסמה"
+                class="form-control form-item" />
+        </div>
+    </div>
+
+    <div class="form-item">
+        <div class="col-sm-2" style="margin-right: 20vw">
+            <button (click)="checkUser2()" class="form-control btn btn-secondary form-item">כניסה</button>
+        </div>
+        <div *ngIf="showError" style="color: red;" class="error-Massage">
+            .הפרטים שהכנסת אינם נכונים. בדוק שוב
+        </div>
+    </div>
+</div>
+</form>
+<!-- </div></div> -->
