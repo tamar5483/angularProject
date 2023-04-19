@@ -19,7 +19,7 @@ export class NewTreatmentFormComponent implements OnInit  {
     {
       "type": new FormControl("", [Validators.required]),//Validators.required
       "date": new FormControl("", [Validators.required]),//Validators.required
-      "time": new FormControl("", [Validators.required,Validators.min(7),Validators.max(20)]),
+      "time": new FormControl("", [Validators.required,Validators.min(7)]),//Validators.required
       "status":new FormControl("", [Validators.required])
     }
   )

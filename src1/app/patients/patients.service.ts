@@ -10,7 +10,7 @@ export class PatientsService {
 
   patients: patientModel[] = [
     { id: "214229222", name: "חיים לוי", phone: "123123213", doctorId: "2" },
-    { id: "214229212", name: "יהודה", phone: "123123213", doctorId: "2" },
+    { id: "214229212", name: "sdf", phone: "123123213", doctorId: "1" },
     { id: "214279727", name: "sdf", phone: "123123213", doctorId: "2" },
     { id: "214272727", name: "sdf", phone: "123123213", doctorId: " 2" }
   ]

@@ -13,8 +13,9 @@ export class HomePageComponent  {
 
 
   goToPatientslist(){
-  this.router.navigate([`${this.router.url}/patients`])
+  this.router.navigate([`doctor/1/patients`])
  }
+
  goToSchdule(){
   this.router.navigate([`${this.router.url}/schedule`])
  }

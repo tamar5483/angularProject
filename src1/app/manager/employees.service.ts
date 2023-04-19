@@ -14,11 +14,11 @@ export class EmployeesService {
     {id:"1",name:"a",password:"123",email:"asdsa",phone:"afas",role:"manager"},
     {id:"2",name:"b",password:"123",email:"asdsa",phone:"afas",role:"doctor"},
     {id:"3",name:"c",password:"123",email:"asdsa",phone:"afas",role:"secretary"},
-    { name: "שלום חי", id: "4", phone: "234234234", email: "fg@gmail.com", role: "doctor" ,password:"1"},
-    { name: "שרה לוי", id: "5", phone: "023493434", email: "fgsssh@gmail.com", role: "doctor" ,password:"1"},
-    { name: "שלום כהן", id: "6", phone: "0504193232", email: "gfdh@gmail.com", role: "doctor" ,password:"1"},
-    { name: "חיים גולד", id: "7", phone: "048222222", email: "fgssh@gmail.com", role: "manager" ,password:"1"},
-    { name: "לאה שמואלי", id: "8", phone: "03972674", email: "fgssh@gmail.com", role: "secretary" ,password:"1"},
+    { name: "שלום חי", id: "4", phone: "234234234", email: "fg@gmail.com", role: "doctor" ,password:"12sdw53"},
+    { name: "שרה לוי", id: "5", phone: "023493434", email: "fgsssh@gmail.com", role: "doctor" ,password:"12sdf3"},
+    { name: "שלום כהן", id: "6", phone: "0504193232", email: "gfdh@gmail.com", role: "doctor" ,password:"1sdf23"},
+    { name: "חיים גולד", id: "7", phone: "048222222", email: "fgssh@gmail.com", role: "manager" ,password:"1sdf23"},
+    { name: "לאה שמואלי", id: "8", phone: "03972674", email: "fgssh@gmail.com", role: "secretary" ,password:"1sdf23"},
   ]
   constructor(private http: HttpClient) { }
 

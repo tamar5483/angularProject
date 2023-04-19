@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { appointmentModel } from './treatment.model';
+import { Time } from '@angular/common';
 import { PatientsService } from '../patients/patients.service';
 @Injectable({
   providedIn: 'root'
@@ -9,16 +10,16 @@ import { PatientsService } from '../patients/patients.service';
 export class AppointmentService {
 
   appointments:appointmentModel[]=[
-    {id:1,patient:"חיים לוי",type:"סתימה",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:2,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:3,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:4,patient:"יהודה",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:5,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:6,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:7,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-20"},
-    {id:8,patient:"יהודה",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-19"},
+    {id:1,patient:"חיים לוי",type:"סתימה",status:"שולם" ,time:"00:11",date:"2023-03-19"},
+    {id:2,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-19"},
+    {id:3,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-19"},
+    {id:4,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:5,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:6,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:7,patient:"חיים לוי",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-17"},
+    {id:8,patient:"חיים ",type:"שורש",status:"שולם" ,time:"00:11",date:"2023-03-19"},
     {id:9,patient:"חיים לוי",type:"סתימה",status:"שולם" ,time:"00:11",date:"2023-03-19"},
-   {id:10,patient:"חיים לוי",type:"שורש",status:"לא שולם" ,time:"00:11",date:"2023-03-19"},
+   {id:10,patient:"חיים לוי",type:"שורש",status:"לא שולם" ,time:"00:11",date:"2023-03-17"},
     
   ]
   types:string[]=["שורש","סתימה"]

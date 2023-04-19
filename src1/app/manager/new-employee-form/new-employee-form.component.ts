@@ -18,10 +18,9 @@ export class NewEmployeeFormComponent {
   newEmployeeForm: FormGroup = new FormGroup(
     {
       "name": new FormControl("", [Validators.required]),
-      "phone": new FormControl("", {validators:[Validators.required, Validators.minLength(9)]} ),
+      "phone": new FormControl("", {validators:[Validators.required, Validators.minLength(9)],updateOn:"blur"} ),
       "email": new FormControl("", [Validators.required, Validators.email]),
-      "role": new FormControl("", {validators:[Validators.required]
-      })
+      "role": new FormControl("", {validators:[Validators.required], updateOn: 'blur'})
       
     }
   )

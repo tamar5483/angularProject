@@ -26,12 +26,10 @@
             <input formControlName="time" name="time" type="time" class="form-control" />
         </div>
 
+        <!-- step="15" min="07:00" max="18:00" -->
         <ng-container *ngIf="newTreatmentForm.dirty&&newTreatmentForm.controls.time.errors">
             <div *ngIf="newTreatmentForm.controls.time.errors.required" class="error-Massage">
                 השדה הוא שדה חובה
-            </div>
-              <div *ngIf="newTreatmentForm.controls.time.errors.min||newTreatmentForm.controls.time.errors.max" class="error-Massage">
-              שעה לא חוקית
             </div>
         </ng-container>
     </div>
@@ -44,6 +42,7 @@
 
             <div class="col-sm-3">
                 <select formControlName="type" class="form-control ">
+                    <!-- <option  >בחר מתוך רשימה</option> -->
                     <option *ngFor="let t of types" [value]="t">{{t}}</option>
                 </select>
             </div>
@@ -68,6 +67,8 @@
 
         </div>
         <ng-container *ngIf="newTreatmentForm.dirty&&newTreatmentForm.controls.status.errors">
+
+
             <div class="error-Massage" *ngIf="newTreatmentForm.controls.status.errors.required">
                 השדה הוא שדה חובה
             </div>
