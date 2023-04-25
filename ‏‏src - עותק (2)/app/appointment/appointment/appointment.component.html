@@ -1,0 +1,6 @@
+<div *ngIf="!ableSet" (click)="setAbleSet(true)">
+  {{appointment.type}}  , {{appointment.time }}  ,   {{appointment.date |dateFormat}}  ,{{appointment.status}}
+ </div>
+
+<!-- <update-appointment-form [appointment]="appointment" *ngIf="ableSet" (onAppointmentSaves)="save($event)></update-appointment-form>    -->
+<update-appointment-form [appointment]="appointment"></update-appointment-form>

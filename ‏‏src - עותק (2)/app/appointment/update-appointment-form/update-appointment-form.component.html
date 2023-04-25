@@ -1,0 +1,18 @@
+<div  class="form">
+
+  
+    <select [(ngModel)]="appointment.type" class="form-control">
+      <option *ngFor="let t of types" >{{t}}</option>
+    </select>
+  
+    <input type="time" [(ngModel)]="appointment.time" class="form-control" />
+   
+    <input type="date" [(ngModel)]="appointment.date" class="form-control"/>
+  
+    <select [(ngModel)]="appointment.status" class="form-control">
+      <option *ngFor="let s of statuses" >{{s}}</option>
+    </select>
+  
+    <button (click)="save()" class="btn btn-dark">אישור</button>
+  
+  </div>

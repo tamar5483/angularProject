@@ -1,0 +1,14 @@
+<!-- <appointments-list [setAppointments]="appointments"></appointments-list> -->
+<h1>{{currentDate |date}} </h1>
+<!-- 
+<ul *ngFor="let a of appointments">
+    <li >{{a.time}}:  {{a.patient}}-  {{a.type}} </li>
+</ul> -->
+<hr>
+<table class="table table-striped">
+    <tr *ngFor="let a of appointments">
+        <td> {{a.time}} </td>
+        <!-- <td>|</td> -->
+        <td>{{a.patient}} -   {{a.type}}</td>
+</tr>
+</table>

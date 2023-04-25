@@ -1,0 +1,10 @@
+
+<h1> רשימת טיפולים פציינט מספר {{patientId}}</h1>
+<ul  class="list-group">
+    <li *ngFor="let appointment of appointments"class="list-group-item">
+        <appointment [appointment]="appointment" (onAppointmentUpdate)="updateAppointment($event)"></appointment>
+    </li>
+</ul>
+
+<button *ngIf="showButton" (click)="setShowForm()" class="btn btn-dark">הוסף טיפול</button>
+<new-appointment-form *ngIf="showForm" (onAppointmentSave)="addAppointment($event)" [patientId]="patientId"></new-appointment-form>
